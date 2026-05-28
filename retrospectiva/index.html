@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0b0b0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Nossa História</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Tela de início (tap para começar) -->
+  <div id="splash">
+    <div class="splash-particles" id="splashParticles"></div>
+    <div class="splash-content">
+      <div class="splash-envelope" id="splashEnvelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-body">
+          <div class="envelope-heart">&#10084;</div>
+        </div>
+      </div>
+      <h1 class="splash-title" id="splashTitle"></h1>
+      <p class="splash-subtitle">Toque para abrir</p>
+      <div class="splash-pulse"></div>
+    </div>
+  </div>
+
+  <!-- Container principal -->
+  <div id="app" class="hidden">
+    <!-- Indicador de progresso -->
+    <div id="progressBar"><div id="progressFill"></div></div>
+
+    <!-- Controle de música -->
+    <button id="musicBtn" class="music-btn hidden" aria-label="Controlar música">
+      <span class="music-icon" id="musicIcon">&#9835;</span>
+      <span class="music-wave" id="musicWave">
+        <span></span><span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <!-- Navegação -->
+    <button id="navUp" class="nav-arrow nav-up hidden" aria-label="Slide anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <button id="navDown" class="nav-arrow nav-down" aria-label="Próximo slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+
+    <!-- Indicador de slides (dots) -->
+    <div id="dotsContainer" class="dots-container"></div>
+
+    <!-- Container dos slides -->
+    <div id="slidesContainer" class="slides-container"></div>
+
+    <!-- Partículas -->
+    <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+  </div>
+
+  <!-- Áudio de fundo -->
+  <audio id="bgMusic" loop preload="auto"></audio>
+
+  <script src="config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
